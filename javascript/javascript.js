@@ -13,7 +13,7 @@ var arrImg = ['../img/banner_1.jpg','../img/banner_2.jpg','../img/banner_3.jpg',
 var i = 1
 
 setInterval( function(){
-        $("#banner").css('background-image','url(../img/banner_'+i+'.jpg)');
+        $("#banner").css('background-image','url(project_3/img/banner_'+i+'.jpg)');
         i++;
         if (i>=arrImg.length){
             i=1;
