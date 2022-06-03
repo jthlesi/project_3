@@ -9,7 +9,7 @@ window.onresize = function () {
 };
 
 //배너
-var arrImg = ["../img/banner_1.jpg","../img/banner_2.jpg","../img/banner_3.jpg","../img/banner_4.jpg"]
+var arrImg = ['../img/banner_1.jpg','../img/banner_2.jpg','../img/banner_3.jpg','../img/banner_4.jpg']
 var i = 1
 
 setInterval( function(){
