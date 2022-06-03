@@ -9,12 +9,11 @@ window.onresize = function () {
 };
 
 //배너
-var arrImg = ['../img/banner_1.jpg','../img/banner_2.jpg','../img/banner_3.jpg','../img/banner_4.jpg']
-var i = 1
+var i = 2
 
 setInterval( function(){
         $("#banner").css('background-image','url(img/banner_'+i+'.jpg)');
         i++;
-        if (i>=arrImg.length){
+        if (i>4){
             i=1;
-        }},3000)
+        }},4000)
