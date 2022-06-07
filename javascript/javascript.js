@@ -63,4 +63,3 @@ $("#prev").click(function(){
 
 setInterval(smallSlide, 3000)
 
-//사진
