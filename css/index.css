@@ -63,7 +63,7 @@ nav ul li a{
 
 #banner_text{
     position: relative;
-    bottom: -450px;
+    margin-top: 300px;
     color:white;
 }
 
@@ -204,18 +204,19 @@ color:#1babb6
     background-repeat: none;
     background-position: center;
     background-size: cover;
-    flex-grow: 0;
-    flex-shrink: 0;
+    left:0;
+    width:50%;
 }
 
 #text{
     position: relative;
-    flex-grow: 0;
-    flex-shrink: 0;
-    max-width: 50%;
-    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: right;
+    height: 600px;
 }
+
 #text h1{
     color: #1babb6;
 }
@@ -254,7 +255,6 @@ color:#1babb6
     left: 50%;
     transform: translate(-50%,-50%);
     animation: pulse 1.5s infinite cubic-bezier(0.5, 0.5, 0.7, 0.7);
-    ;
 }
 
 @keyframes pulse{
@@ -262,11 +262,12 @@ color:#1babb6
         box-shadow: 0 0 0 7px #1babb6 ;
     }
 }
+
 #cover iframe{
     border: none;
 }
 
-/* 통계카운트 */
+/* 숫자카운트 */
 
 #count{
     width: 100%;
@@ -284,6 +285,7 @@ color:#1babb6
     height: 100%;
     background-color: rgba(0, 0, 0, 0.3)
 }
+
 #countTxt{
     width: 100%;
     text-align: center;
@@ -294,23 +296,78 @@ color:#1babb6
 #countTxt h1{
     margin-bottom: 20px;
 }
+
 .countBox{
     width:25%;
     height: 200px;
-    padding: 20px;
+    color: white;
+    font-size: 1.5vw;
+    line-height: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .countBox i{
-    font-size: 50px;
-    color: white;
+    font-size: 60px;
 }
 
-.countBox {
-    color: white;
-    margin: 10px 0;
-    font-size: 1.5vw;
+.countBox:hover{
+    color: #1babb6;
 }
 
+/* 입양후기 */
+#review{
+    margin: 200px 0;
+}
+
+#review .container{
+    justify-content: center;
+}
+
+#reviewSlide{
+    width:100%;
+    height:400px;
+    overflow: hidden;
+    position:relative;
+    margin-top: 50px;
+}
+
+#reviewList{
+    width:1000%;
+    height: 400px;
+    left:0;
+    position: absolute;
+    transition: all 0.5s ease;
+}
+
+.reviewBox{
+    float: left;
+    height: 400px;
+    background:aquamarine;
+    
+}
+
+#reviewPage{
+    width:100%;
+    height:40px;
+    display: flex;
+    justify-content: center;
+}
+
+#pageList{
+    width:100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.page{
+    width:40px;
+    height: 40px;
+    background:goldenrod;
+    margin: 10px 10px 0 10px;
+}
 
 /* footer */
 footer{

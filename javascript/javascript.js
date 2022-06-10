@@ -22,11 +22,11 @@ setInterval(function () {
 var wrapWidth = document.querySelector('#slides').offsetWidth;
 var slidesBox = document.querySelector("#slide_list");
 var slideBox = document.querySelectorAll('.slide_box');
-var index = 0;
 
-for (index = 0; index < slideBox.length; index++) {
-    slideBox[index].style.backgroundImage = 'url(img/small_' + (index + 1) + '.jpg)';
-    slideBox[index].style.width = wrapWidth / 4 + "px";
+
+for (i = 0; i < slideBox.length; i++) {
+    slideBox[i].style.backgroundImage = 'url(img/small_' + (i + 1) + '.jpg)';
+    slideBox[i].style.width = wrapWidth / 4 + "px";
 };
 
 var indexNum = 0
@@ -40,88 +40,114 @@ function smallSlide() {
     }
 }
 
-function move(page){
-    slidesBox.style.left = - (wrapWidth / 4) * (page) + "px";
-    indexNum=page;
+function move(page) {
+    slidesBox.style.left = - (wrapWidth / 4) * page + "px";
+    indexNum = page;
 }
 
-$("#next").click(function(){
+$("#next").click(function () {
     if (indexNum < slideBox.length - 4) {
-    move(indexNum+1);
-} else {
-    move(0);
-}
+        move(indexNum + 1);
+    } else {
+        move(0);
+    }
 })
 
-$("#prev").click(function(){
-    if (indexNum > 0 ) {
-    move(indexNum-1);
-} else {
-    move(slideBox.length - 4);
-}
+$("#prev").click(function () {
+    if (indexNum > 0) {
+        move(indexNum - 1);
+    } else {
+        move(slideBox.length - 4);
+    }
 })
 
 setInterval(smallSlide, 3000)
 
 //section#3 크기
-$(document).ready(function () {
-    $("#photo").css("flex-basis", ($(window).width() / 2) + 'px');
-    $("#photo").css("left", -(($(window).width() / 2) - (($(".container").width() / 2))) + 'px');
-    $("#text").css("left", -(($(window).width() / 2) - (($(".container").width() / 2))) + 'px');
-    $("#text").css("flex-basis", ((($(".container").width() / 2))) + 'px');
-});
-
-//동영상
-$("#cover i").click(function(){
-    $("#cover").html("<iframe width='740' height='400' src='https://www.youtube.com/embed/k7NRCUU5qqQ?autoplay=1&mute=1'; allow='accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>")
+$(function(){
+    $("#text").css("width",($('.container').width()/2)+'px')
 })
 
+//동영상
+$("#cover i").click(function () {
+    $("#cover").html("<iframe width='100%' height='100%' src='https://www.youtube.com/embed/k7NRCUU5qqQ?autoplay=1&mute=1'; allow='accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>")
+})
 
-    $("#cover div").hover(function(){
-        $(this).css("animation-play-state","paused")
-    },function(){$(this).css("animation-play-state","running")
+$("#cover div").hover(function () {
+    $(this).css("animation-play-state", "paused")
+}, function () {
+    $(this).css("animation-play-state", "running")
 })
 
 //숫자증가
+var count1 = count2 = count3 = count4 = 0;
 
-    var count1=count2=count3=count4=0;
-    counter();
-    function counter(){
-        time1=setInterval(count1Fn, 3);
-        function count1Fn(){
-            count1++;
-            if(count1>532){
-                clearInterval(time1);
-            }else{
-                $(".countNum").eq(0).text(count1);
-            }
-        }
-        time2=setInterval(count2Fn, 5);
-        function count2Fn(){
-            count2++;
-            if(count2>312){
-                clearInterval(time2);
-            }else{
-                $(".countNum").eq(1).text(count2);
-            }
-        }
-        time3=setInterval(count3Fn, 7);
-        function count3Fn(){
-            count3++;
-            if(count3>220){
-                clearInterval(time3);
-            }else{
-                $(".countNum").eq(2).text(count3);
-            }
-        }
-        time4=setInterval(count4Fn, 30);
-        function count4Fn(){
-            count4++;
-            if(count4>32){
-                clearInterval(time4);
-            }else{
-                $(".countNum").eq(3).text(count4);
-            }
+function counter() {
+    var num1 = setInterval(counter1, 6);
+    function counter1() {
+        count1++;
+        if (count1 <= 532) {
+            $(".countNum").eq(0).text(count1);
+        } else {
+            clearInterval(num1);
         }
     }
+    var num2 = setInterval(counter2, 9);
+    function counter2() {
+        count2++;
+        if (count2 <= 312) {
+            $(".countNum").eq(1).text(count2);
+        } else {
+            clearInterval(num2);
+        }
+    }
+    var num3 = setInterval(counter3, 11);
+    function counter3() {
+        count3++;
+        if (count3 <= 220) {
+            $(".countNum").eq(2).text(count3);
+        } else {
+            clearInterval(num3);
+        }
+    }
+    var num4 = setInterval(counter4, 40);
+    function counter4() {
+        count4++;
+        if (count4 <= 32) {
+            $(".countNum").eq(3).text(count4);
+        } else {
+            clearInterval(num4);
+        }
+    }
+}
 
+document.addEventListener("scroll", function () {
+    if ($(window).scrollTop() > ($("#count").position().top - 80) && $(window).scrollTop() < ($("#count").position().top - 40)) {
+        counter();
+    }
+})
+
+//리뷰
+var reviewWidth = document.querySelector('#reviewSlide').offsetWidth;
+var reviewsBox = document.querySelector("#reviewList");
+var reviewBox = document.querySelectorAll('.reviewBox');
+
+for (i = 0; i < reviewBox.length; i++) {
+    reviewBox[i].style.width = reviewWidth / 3 + "px";
+};
+
+function pager(pageNum) {
+    reviewsBox.style.left = - (reviewWidth  * pageNum) + "px";
+}
+
+$(".page").eq(0).click(function(){
+    pager(0)
+});
+
+$(".page").eq(1).click(function(){
+    pager(1)
+});
+
+$(".page").eq(2).click(function(){
+    pager(2)
+});
