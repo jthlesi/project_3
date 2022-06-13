@@ -128,8 +128,14 @@ document.addEventListener("scroll", function () {
 })
 
 //리뷰
+var reviewImgs = document.querySelectorAll(".reviewImg");
+var imgIdx = 0;
+
+for (imgIdx = 0; imgIdx < reviewImgs.length; imgIdx++) {
+    reviewImgs[imgIdx].style.backgroundImage = 'url(img/review_' + (imgIdx + 1)  + '.jpg)';
+};
+
 var reviewWidth = document.querySelector('#reviewSlide').offsetWidth;
-var reviewsBox = document.querySelector("#reviewList");
 var reviewBox = document.querySelectorAll('.reviewBox');
 
 for (i = 0; i < reviewBox.length; i++) {
@@ -137,17 +143,25 @@ for (i = 0; i < reviewBox.length; i++) {
 };
 
 function pager(pageNum) {
-    reviewsBox.style.left = - (reviewWidth  * pageNum) + "px";
+    $("#reviewList").animate({left : `-${(reviewWidth * pageNum)}px` },"fast","linear");
 }
 
 $(".page").eq(0).click(function(){
-    pager(0)
+    pager(0);
+    $(this).addClass("on").siblings().removeClass("on");
 });
 
 $(".page").eq(1).click(function(){
-    pager(1)
+    pager(1);
+    $(this).addClass("on").siblings().removeClass("on");
+
 });
 
 $(".page").eq(2).click(function(){
-    pager(2)
+    pager(2);
+    $(this).addClass("on").siblings().removeClass("on");
+
 });
+
+
+
