@@ -10,27 +10,55 @@ body{
     overscroll-behavior: none;
 }
 
+/* 폰트 */
+@font-face {
+    font-family: 'S-CoreDream-4Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+h1,p,a,span,div {
+    font-family: "Raleway", "S-CoreDream-4Regular", sans-serif;
+}
+
 /* 헤더 */
 header{
     width: 100%;
-    height: 45px;
-    background: beige;
+    height: 50px;
+    z-index: 10;
+}
+
+#sticky{
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right:0;
+}
+
+.scroll{
+    background: #1e1c27;
+    opacity: 0.8;
 }
 
 header .container{
-    height: 45px;
+    height: 50px;
     align-items: center;
     position: relative;
-    z-index: 10;
+
 }
+
 
 /* 로고 */
 .logo{
     width:200px;
-    height: 45px;
+    height: 50px;
     background-image: url(../img/logo_small.png);
-    background-size:200px 45px;
-    background-repeat: none;
+    background-size:200px 50px;
+    background-repeat: no-repeat;
     background-position: center;
 }
 
@@ -39,50 +67,83 @@ nav{
     width: calc(100% - 200px);
 }
 
-nav ul{
+nav > ul{
     display: flex;
     justify-content: right;
 }
 
-nav ul li a{
+.menu_1 > a{
     color:white;
-    margin-left: 30px;
+    font-size: 1.1em;
+    height: 50px;
 }
+
+.menu_1{
+    position: relative;
+    width: 110px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    padding-top: 13px;
+}
+
+.menu_1 ul {
+    display: none;
+    position: absolute;
+    top:50px;
+    width: 100%;    
+}
+
+.menu_2 > a{
+    display: block;
+    padding: 0 0 20px 20px;
+    color:white;
+    font-size: 1em;
+}
+
+
 
 /* 배너 */
 #banner{
     width:100%;
     position: relative;
-    top:-45px;
-    background-repeat: none;
+    top:-50px;
     background-position: center;
     background-size: cover;
     background-image: url(../img/banner_1.jpg);
     transition: all 0.7s ease; 
 }
 
+#bannerWrap{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.4);
+
+}
+
 #banner_text{
     position: relative;
-    margin-top: 300px;
+    padding-top: 300px;
     color:white;
 }
 
-h1{
-    font-size: 3vw;
+#banner h1{
+    font-size: 4em;
 }
 
 #banner p{
     margin: 15px 0 0 10px;
-    font-size: 1vw;
+    font-size: 1.3em;
 }
 
-span{
-    background: #1babb6;
+#banner span{
+    background-image: linear-gradient(transparent 60%,#1babb6 40%);
 }
 
 #banner_btn{
     width: 250px;
-    margin: 10px 0 0 10px;
+    margin: 20px 0 0 10px;
     height: 50px;
     background: white;
     color: black;
@@ -94,6 +155,7 @@ span{
 
 #banner_btn p{
     margin: 0;
+    font-size: 1.1em;
 }
 
 #banner_btn:hover{
@@ -151,7 +213,7 @@ color:#1babb6
 
 #section_3{
     width:100%;
-    height:1000px;
+    height:auto;
 }
 
 #form{
@@ -167,7 +229,7 @@ color:#1babb6
 #form p{
     margin-left: 20px;
     color: black;
-    font-size: 2vw;
+    font-size: 2.2em;
     align-self: center;
     font-weight: 700;
 }
@@ -183,6 +245,7 @@ color:#1babb6
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    font-size: 1.2em;
 }
 
 #form_btn:hover{
@@ -193,9 +256,10 @@ color:#1babb6
 
 #wrap_photo{
     width:100%;
-    height: 600px;
+    height: auto;
     display: flex;
     flex-wrap: nowrap;
+    margin-bottom: 200px;
 }
 
 #photo{
@@ -206,6 +270,7 @@ color:#1babb6
     background-size: cover;
     left:0;
     width:50%;
+    height: 600px;
 }
 
 #text{
@@ -219,9 +284,15 @@ color:#1babb6
 
 #text h1{
     color: #1babb6;
+    font-size: 3.5em;
 }
 #text h2{
     margin: 20px 0 30px 0;
+    font-size: 2em;
+}
+
+#text p{
+    font-size: 1.1em;
 }
 
 /* 동영상 */
@@ -231,7 +302,7 @@ color:#1babb6
     height: 400px;
     position: relative;
     background-image: url(../img/cover.jpg);
-    background-repeat: none;
+    background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     cursor: pointer;
@@ -277,13 +348,14 @@ color:#1babb6
     background-repeat: none;
     background-position: center;
     background-size: cover;
-    background-attachment: fixed;;
+    background-attachment: fixed;
+
 }
 
 #countWrap{
     width:100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3)
+    background-color: rgba(0, 0, 0, 0.5)
 }
 
 #countTxt{
@@ -295,13 +367,18 @@ color:#1babb6
 
 #countTxt h1{
     margin-bottom: 20px;
+    font-size: 3.3em;
+}
+
+#countTxt p{
+    font-size: 1.5em;
 }
 
 .countBox{
     width:25%;
     height: 200px;
     color: white;
-    font-size: 1.5vw;
+    font-size: 1.5em;
     line-height: 2em;
     display: flex;
     flex-direction: column;
@@ -325,6 +402,9 @@ color:#1babb6
     justify-content: center;
 }
 
+#review h1{
+    font-size: 3em;
+}
 #reviewSlide{
     width:100%;
     height:500px;
@@ -397,6 +477,7 @@ color:#1babb6
 .reviewTxt{
     width: 100%;
     height: 150px;
+    font-size: 1em;
 }
 
 .reviewTxt p{
@@ -422,6 +503,81 @@ color:#1babb6
 
 /* footer */
 footer{
+    padding-top: 40px;
     width: 100%;
-    height: 1000px;
+    height: auto;
+    background: #1e1c27;
+    color:#1babb6;
+}
+
+#footLeft{
+    width:40%;
+    height: auto;
+}
+.logoL{
+
+    width: 200px;
+    height: 200px;
+    background-image: url(../img/logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:100%;
+}
+
+#footLeft p{
+    line-height: 2em;
+    margin-left: 10px;
+}
+
+#footCenter{
+    width: 30%;
+    height: auto;
+    margin-top: 35px;
+}
+
+#footCenter h1{
+    margin-bottom: 35px;
+    font-size: 2.5em;
+}
+#footCenter a{
+    display: block;
+    color:#1babb6;
+    margin-top: 20px;
+}
+
+#footRight{
+    width:30%;
+    height: auto;
+    margin-top: 150px;
+}
+#call, #mail{
+    width:100%;
+    height:auto;
+    display: flex;
+    margin-bottom: 50px;
+}
+.icon{
+    width:80px;
+    height:auto;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.textWrap{
+    width: calc(100% - 80px);
+    height: auto;
+}
+
+#call p:nth-of-type(1){
+    font-size: 1.3em;
+}
+
+#call p:nth-of-type(2){
+    font-size: 2.1em;
+}
+
+#mail P{
+    font-size: 1.5em;
 }

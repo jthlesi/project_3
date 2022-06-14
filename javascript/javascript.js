@@ -8,6 +8,30 @@ window.onresize = function () {
     document.location.reload();
 };
 
+//네비게이션
+$(document).ready(function(){
+    scrollColor();
+})
+$(window).scroll(function(){
+    scrollColor();
+})
+
+function scrollColor(){
+    if($(window).scrollTop() > 300){
+        $("#sticky, .menu_2>a").addClass("scroll")
+    }else{
+        $("#sticky, .menu_2>a").removeClass("scroll")
+    }
+}
+
+$(document).ready(function(){
+    $(".menu_1").on("mouseenter focusin", function(){
+        $("ul", this).show();
+    }).on("mouseleave", function(){
+        $("ul", this).hide();
+    });
+})
+
 //배너
 var idx = 2
 setInterval(function () {
@@ -64,9 +88,16 @@ $("#prev").click(function () {
 setInterval(smallSlide, 3000)
 
 //section#3 크기
+if (window.matchMedia("(min-width:800px)").matches) {
+
 $(function(){
     $("#text").css("width",($('.container').width()/2)+'px')
 })
+} else {
+    $(function(){
+        $("#text").css("width","100%")
+    })
+}
 
 //동영상
 $("#cover i").click(function () {
