@@ -87,7 +87,7 @@ nav > ul{
     padding-top: 13px;
 }
 
-.menu_1 ul {
+.menu_1>ul {
     display: none;
     position: absolute;
     top:50px;
@@ -99,6 +99,95 @@ nav > ul{
     padding: 0 0 20px 20px;
     color:white;
     font-size: 1em;
+}
+
+#navSmall{
+    display: none;
+}
+
+#hamWrap{
+    display: none;
+    overflow: hidden;
+    width:50px;
+    height: 50px;
+    position: absolute;
+    right: 10px;
+    top:0
+}
+
+#ham{
+    display: none;
+    position: relative;
+    background: #1babb6;
+}
+
+#ham span{
+    display: block;
+    width:46px;
+    height: 4px;
+    background-color:#1babb6;
+    position: absolute;
+    margin: 6px 2px 6px 2px;
+}
+
+#ham_1{
+    top:0px;
+    transition: all 0.5s ease;
+}
+
+#ham_2{
+    top:17px;
+    transition: all 0.5s ease;
+}
+
+#ham_3{
+    top:34px;
+    transition: all 0.5s ease;
+}
+
+#ham_1.open{
+    top:17px;
+    transform: rotate(135deg);
+}
+#ham_2.open{
+    left:-50px;
+    transform: scale(0);
+}
+#ham_3.open{
+    top:17px;
+    transform: rotate(-135deg);
+}
+
+#navSmall{
+    width: 100%;
+    height: auto;
+    background-color: #1e1c27;
+    opacity: 0.9;
+    display: none;
+    padding: 20px;
+}
+
+.menu_1s{
+    margin-top: 10px;
+    color: white;
+}
+
+.menu_1s a{
+    color: white;
+}
+
+.menu_1s >ul {
+    display: none;
+    width: 100%;
+    margin: 10px 0px;    
+}
+
+.menu_1s > ul > li{
+    margin: 10px 30px;
+}
+
+.menu_1s > ul > li >a{
+    color: white;
 }
 
 
@@ -280,19 +369,26 @@ color:#1babb6
     justify-content: center;
     text-align: right;
     height: 600px;
+    overflow: hidden;
 }
 
 #text h1{
     color: #1babb6;
     font-size: 3.5em;
+    position: relative;
+    right:-600px;
 }
 #text h2{
     margin: 20px 0 30px 0;
     font-size: 2em;
+    position: relative;
+    left:-600px;
 }
 
 #text p{
     font-size: 1.1em;
+    position: relative;
+    bottom:-250px;
 }
 
 /* 동영상 */
@@ -304,7 +400,7 @@ color:#1babb6
     background-image: url(../img/cover.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: 100% 400px;
     cursor: pointer;
 }
 
@@ -500,6 +596,20 @@ color:#1babb6
 .reviewBox:hover span{
     color: black;
 }
+
+#pageBtn{
+    display: none;
+    margin: 0 auto;
+}
+
+#prev_2, #next_2{
+    float: left;
+    margin: 0 20px;
+    cursor: pointer;
+font-size: 45px;
+color:#1babb6
+}
+
 
 /* footer */
 footer{
