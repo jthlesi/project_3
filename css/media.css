@@ -30,6 +30,7 @@
     #ham{
         display: block;
     }
+
     .menu_1s a,i{
         font-size: 1.5em;
     }
@@ -180,6 +181,16 @@
         width : 100%;
     }
 
+    #sticky{
+        background: none;
+        opacity: none;
+    }
+
+    header .container{
+        background: #1e1c27;
+        opacity: 0.9;
+    }
+
     nav>ul{
         display: none;
     }
@@ -190,6 +201,21 @@
 
     #ham{
         display: block;
+    }
+
+    .menu_1s a,i{
+        font-size: 1.5em;
+    }
+
+    #banner h1{
+        margin-left: 15px;
+    }
+    #banner_text>p{
+        margin-left: 20px;
+    }
+
+    #banner_btn{
+        margin-left: 20px;
     }
 
     #form{
@@ -224,6 +250,7 @@
 
     #footLeft{
         width: 50%;
+        padding-left: 10px;
     }
 
     #footCenter{
@@ -233,7 +260,8 @@
     }
 
     #footRight{
-        width:100%
+        width:100%;
+        padding-left: 15px;
     }
 }
 
