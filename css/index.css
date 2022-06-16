@@ -7,7 +7,7 @@
 }
 
 body{
-    overscroll-behavior: none;
+    overscroll-behavior-y: none;
 }
 
 /* 폰트 */

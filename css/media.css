@@ -3,12 +3,21 @@
         width : 100%;
     }
 
+    header{
+        height: 70px;
+    }
+
+    header .container{
+        height: 70px;
+    }
+
     nav>ul{
         display: none;
     }
 
     #hamWrap{
         display: block;
+        top:10px;
     }
 
     #ham{
