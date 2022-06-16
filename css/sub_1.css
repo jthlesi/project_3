@@ -1,0 +1,202 @@
+/* 폰트 */
+@font-face {
+    font-family: 'S-CoreDream-4Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+h1,p,a,span,div {
+    font-family: "Raleway", "S-CoreDream-4Regular", sans-serif;
+}
+
+#subBanner_1{
+    width: 100%;
+    height:700px;
+    background: darkgray;
+    top:-80px;
+    position: relative;
+    background-image: url(../img/sub_1/banner_sub_1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#bannerWrap{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+#bannerTxt{
+    width: 100%;
+    padding-top: 300px;
+    color: white;
+    text-align: center;
+}
+
+#bar{
+    display: block;
+    width: 100px;
+    height: 4px;
+    background-color: #1babb6;
+    margin: 20px auto;
+}
+
+#bannerTxt h1{
+    font-size: 3em;
+}
+
+#bannerTxt p{
+    font-size: 1.5em;
+}
+
+#list{
+    width: 100%;
+    height: auto;
+}
+
+#widget{
+    margin: 0 auto;
+    display: flex;
+}
+
+.widgetBtn{
+    width:100px;
+    height: 50px;
+    background: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #1babb6;
+}
+
+.widgetBtn:hover{
+    color: white;
+    background: #1babb6;
+}
+
+#board{
+    margin-top: 80px;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.listLine{
+    display: flex;
+    flex-wrap: wrap;
+}
+.listSWrap{
+    padding: 10px;
+}
+
+.listS{
+    height: 400px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.more{
+    width: 100%;
+    height: 70px;
+    background: rgb(30, 28, 39);
+    opacity: 0.8;
+    position: relative;
+    top: 330px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.detail{
+    display: none;
+    width: 100%;
+    height: auto;
+    position: relative;
+    top:0;
+}
+
+.listL{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.listL h1{
+    margin: 30px 0;
+}
+table{
+    width:60%;
+}
+
+table, tr, td{
+    border: 1px solid #1babb6;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+td{
+    width: 25%;
+    text-align: center;
+}
+
+td:nth-child(odd){
+    background-color: rgba(30,28,39, 0.8);
+    color:white;
+}
+
+iframe{
+    border: none;
+    margin: 30px 0;
+}
+
+.img{
+    width: 60%;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 40px 0;
+}
+
+.listL span{
+    color: #1babb6;
+}
+
+.listL p:nth-of-type(11),p:nth-of-type(12),p:nth-of-type(13){
+    color: #1babb6;
+}
+
+#closeBtn{
+    width: 100%;
+    height: 50px;
+    background: #f9f9f9;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    cursor: pointer;
+    border: 1px solid #1babb6;
+}
+
+#moreList{
+    width:100%;
+    height:50px;
+    background: #f9f9f9;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    cursor: pointer;
+    border: 1px solid #1babb6;
+}

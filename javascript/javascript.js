@@ -286,22 +286,20 @@ if (window.matchMedia("(min-width:800px)").matches) {
         reviewBox[i].style.width = reviewWidth / 3 + "px";
     };
 
+    for (i = 0; i < reviewBox.length / 3; i++) {
+        var li = document.createElement("li");
+        li.innerText = i + 1;
+        li.setAttribute("class", "page");
+        $("#pageList").append(li).find(":first").addClass("on");
+    };
+
     function pager(pageNum) {
         $("#reviewList").animate({ left: `-${(reviewWidth * pageNum)}px` }, "fast", "linear");
     }
 
-    $(".page").eq(0).click(function () {
-        pager(0);
-        $(this).addClass("on").siblings().removeClass("on");
-    });
-
-    $(".page").eq(1).click(function () {
-        pager(1);
-        $(this).addClass("on").siblings().removeClass("on");
-    });
-
-    $(".page").eq(2).click(function () {
-        pager(2);
+    $(".page").click(function () {
+        var pageIdx = $(this).text()
+        pager(pageIdx - 1);
         $(this).addClass("on").siblings().removeClass("on");
     });
 
@@ -311,44 +309,22 @@ if (window.matchMedia("(min-width:800px)").matches) {
         reviewBox[i].style.width = reviewWidth / 2 + "px";
     };
 
-    for (i = 0; i < 2; i++) {
+    for (i = 0; i < reviewBox.length / 2; i++) {
         var li = document.createElement("li");
-        li.innerText = i + 4;
+        li.innerText = i + 1;
         li.setAttribute("class", "page");
-        $("#pageList").append(li);
+        $("#pageList").append(li).find(":first").addClass("on");;
     };
 
     function pager(pageNum) {
         $("#reviewList").animate({ left: `-${(reviewWidth * pageNum)}px` }, "fast", "linear");
     }
 
-
-
-    $(".page").eq(0).click(function () {
-        pager(0);
+    $(".page").click(function () {
+        var pageIdx = $(this).text()
+        pager(pageIdx - 1);
         $(this).addClass("on").siblings().removeClass("on");
     });
-
-    $(".page").eq(1).click(function () {
-        pager(1);
-        $(this).addClass("on").siblings().removeClass("on");
-    });
-
-    $(".page").eq(2).click(function () {
-        pager(2);
-        $(this).addClass("on").siblings().removeClass("on");
-    });
-
-    $(".page").eq(3).click(function () {
-        pager(3);
-        $(this).addClass("on").siblings().removeClass("on");
-    });
-
-    $(".page").eq(4).click(function () {
-        pager(4);
-        $(this).addClass("on").siblings().removeClass("on");
-    });
-
 
 } else {
 
@@ -383,6 +359,5 @@ if (window.matchMedia("(min-width:800px)").matches) {
             pager(reviewBox.length - 1);
         }
     })
-
 }
 
