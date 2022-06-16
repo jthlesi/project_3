@@ -9,17 +9,18 @@ window.onresize = function () {
 };
 
 //네비게이션
-// $(window).scroll(function () {
-//     scrollColor();
-// })
+$(window).scroll(function () {
+    scrollColor();
+})
 
-// function scrollColor() {
-//     if ($(window).scrollTop() > 300) {
-//         $("#sticky, .menu_2>a").addClass("scroll")
-//     } else {
-//         $("#sticky, .menu_2>a").removeClass("scroll")
-//     }
-// }
+function scrollColor() {
+    if ($(window).scrollTop() > 300) {
+        $("#sticky, .menu_1>ul").addClass("scroll")
+    } else {
+        $("#sticky, .menu_1>ul").removeClass("scroll")
+    }
+};
+
 if (window.matchMedia("(min-width:800px)").matches) {
     $(".menu_1").on("mouseenter focusin", function () {
         $("ul", this).show();

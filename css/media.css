@@ -7,8 +7,15 @@
         height: 70px;
     }
 
+    #sticky{
+        background: none;
+        opacity: none;
+    }
+
     header .container{
         height: 70px;
+        background: #1e1c27;
+        opacity: 0.9;
     }
 
     nav>ul{
@@ -26,6 +33,7 @@
     .menu_1s a,i{
         font-size: 1.5em;
     }
+
     #banner{
         top:-70px;
     }
@@ -37,7 +45,11 @@
     
     #banner p{
         margin: 15px 0 0 10px;
-        font-size: 0.9em;
+        font-size: 0.8em;
+    }
+
+    #banner_btn{
+        width: 200px;
     }
 
     #banner_btn p{
@@ -48,6 +60,12 @@
         top: 10px;
     }
 
+    #prev, #next{
+        font-size: 35px;
+    }
+
+
+
     #form{
         margin-top: 70px;
         width: 100%;
@@ -55,11 +73,11 @@
     }
 
     #form p{
-        font-size: 1.1em;
+        font-size: 0.9em;
     }
 
     #form_btn{
-        width: 160px;
+        width: 150px;
         height: 40px;
     }
 
@@ -78,16 +96,32 @@
         height: 400px;
     }
 
-    #count{
-        height: auto;
+    #text p{
+        font-size: 1em;
     }
 
     #cover{
         width: 100%;
     }
 
+    #count{
+        height: auto;
+    }
+
+    #countTxt h1{
+        font-size: 3em;
+    }
+
     .countBox{
         width: 50%;
+    }
+
+    #review h1{
+        font-size: 2em;
+    }
+
+    #prev_2, #next_2{
+        font-size: 35px;
     }
 
     #footLeft{
@@ -97,15 +131,20 @@
         align-items: center;
     }
 
+    #footLeft p{
+        line-height: 1.5em;
+    }
+
     #footCenter{
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 50px;
     }
 
     #footRight{
-        margin-top: 50px;
+        margin-top: 70px;
         width:100%;
         display: flex;
         flex-direction: column;
@@ -120,7 +159,13 @@
         width: auto;
     }
 
-    #mail P{
+    #mail .textWrap{
+        display: flex;
+        align-items: center;
+        
+    }
+
+    #mail p{
         font-size: 1.3em;
     }
 
