@@ -9,20 +9,17 @@ window.onresize = function () {
 };
 
 //네비게이션
-$(document).ready(function () {
-    scrollColor();
-})
-$(window).scroll(function () {
-    scrollColor();
-})
+// $(window).scroll(function () {
+//     scrollColor();
+// })
 
-function scrollColor() {
-    if ($(window).scrollTop() > 300) {
-        $("#sticky, .menu_2>a").addClass("scroll")
-    } else {
-        $("#sticky, .menu_2>a").removeClass("scroll")
-    }
-}
+// function scrollColor() {
+//     if ($(window).scrollTop() > 300) {
+//         $("#sticky, .menu_2>a").addClass("scroll")
+//     } else {
+//         $("#sticky, .menu_2>a").removeClass("scroll")
+//     }
+// }
 if (window.matchMedia("(min-width:800px)").matches) {
     $(".menu_1").on("mouseenter focusin", function () {
         $("ul", this).show();
@@ -31,17 +28,22 @@ if (window.matchMedia("(min-width:800px)").matches) {
     });
 }
 
-$("#hamWrap").click(function(){
-    $("span",this).toggleClass("open");
-    $("#navSmall").toggle()
+$("#hamWrap").click(function () {
+    $("span", this).toggleClass("open");
+    if ($("#ham_1").hasClass("open")) {
+        $("#navSmall").animate({ left: "0px" }, "fast")
+    } else {
+        $("#navSmall").animate({ left: "-100%" }, "fast")
+
+    }
 })
 
-$(".menu_1s").click(function(){
-    $("ul",this).toggle();
-    if($("i",this).hasClass("fa-plus")){
-        $("i",this).removeClass("fa-plus").addClass("fa-minus");
-    } else{
-        $("i",this).removeClass("fa-minus").addClass("fa-plus");
+$(".menu_1s").click(function () {
+    $("ul", this).toggle("fast");
+    if ($("i", this).hasClass("fa-plus")) {
+        $("i", this).removeClass("fa-plus").addClass("fa-minus");
+    } else {
+        $("i", this).removeClass("fa-minus").addClass("fa-plus");
 
     }
 })
@@ -187,21 +189,21 @@ if (window.matchMedia("(min-width:800px)").matches) {
     })
 }
 if (window.matchMedia("(min-width:800px)").matches) {
-$(document).on("scroll", function(){
-    if($(window).scrollTop() > $("#form").position().top){
-        $("#text>h1").animate({right:"0px"},"slow", function(){
-            $("#text>h2").delay(200).animate({left:"0px"},"slow", function(){
-                $("#text>p").delay(100).animate({bottom:"0px"},"slow")
+    $(document).on("scroll", function () {
+        if ($(window).scrollTop() > $("#form").position().top) {
+            $("#text>h1").animate({ right: "0px" }, "slow", function () {
+                $("#text>h2").delay(200).animate({ left: "0px" }, "slow", function () {
+                    $("#text>p").delay(100).animate({ bottom: "0px" }, "slow")
+                })
             })
-        })
-    }
-})
-}else{
-    $(document).on("scroll", function(){
-        if($(window).scrollTop() > ($("#text").position().top - 350)){
-            $("#text>h1").animate({right:"0px"},"slow", function(){
-                $("#text>h2").delay(200).animate({left:"0px"},"slow", function(){
-                    $("#text>p").delay(100).animate({bottom:"0px"},"slow")
+        }
+    })
+} else {
+    $(document).on("scroll", function () {
+        if ($(window).scrollTop() > ($("#text").position().top - 350)) {
+            $("#text>h1").animate({ right: "0px" }, "slow", function () {
+                $("#text>h2").delay(200).animate({ left: "0px" }, "slow", function () {
+                    $("#text>p").delay(100).animate({ bottom: "0px" }, "slow")
                 })
             })
         }
@@ -350,15 +352,15 @@ if (window.matchMedia("(min-width:800px)").matches) {
 } else {
 
     for (i = 0; i < reviewBox.length; i++) {
-        reviewBox[i].style.width = reviewWidth  + "px";
+        reviewBox[i].style.width = reviewWidth + "px";
     };
 
-    $(document).ready(function(){
+    $(document).ready(function () {
         $("#pageList").hide();
         $("#pageBtn").show();
     })
 
-    var pageIdx =0;
+    var pageIdx = 0;
 
     function pager(pageNum) {
         $("#reviewList").animate({ left: `-${(reviewWidth * pageNum)}px` }, "fast", "linear");
@@ -367,7 +369,7 @@ if (window.matchMedia("(min-width:800px)").matches) {
 
     $("#next_2").click(function () {
         if (pageIdx < reviewBox.length - 1) {
-            pager(pageIdx+1);
+            pager(pageIdx + 1);
         } else {
             pager(0);
         }
@@ -377,7 +379,7 @@ if (window.matchMedia("(min-width:800px)").matches) {
         if (pageIdx > 0) {
             pager(pageIdx - 1);
         } else {
-            pager(reviewBox.length -1);
+            pager(reviewBox.length - 1);
         }
     })
 
