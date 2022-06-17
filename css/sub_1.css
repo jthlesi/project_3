@@ -12,6 +12,10 @@ h1,p,a,span,div {
     font-family: "Raleway", "S-CoreDream-4Regular", sans-serif;
 }
 
+body{
+    overscroll-behavior-y: contain;
+}
+
 #subBanner_1{
     width: 100%;
     height:700px;
@@ -87,11 +91,9 @@ h1,p,a,span,div {
     overflow: hidden;
 }
 
-.listLine{
-    display: flex;
-    flex-wrap: wrap;
-}
+
 .listSWrap{
+    float:left;
     padding: 10px;
 }
 
@@ -121,8 +123,6 @@ h1,p,a,span,div {
     display: none;
     width: 100%;
     height: auto;
-    position: relative;
-    top:0;
 }
 
 .listL{
@@ -199,4 +199,12 @@ iframe{
     font-size: 1.5em;
     cursor: pointer;
     border: 1px solid #1babb6;
+}
+
+.listLine{
+    display: none;
+}
+
+.listLine:nth-of-type(1){
+    display: block;    
 }

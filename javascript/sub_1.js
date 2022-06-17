@@ -2,44 +2,10 @@ $(document).ready(function () {
     $(".listSWrap").css("width", `${$('.container').width() / 3}px`)
 })
 
-madeDiv();
-
-function madeDiv() {
-    var div = document.createElement("div");
-    div.setAttribute("class", "listLine");
-    $(".detail").before(div);
-    for (i = 0; i < 3; i++) {
-
-        var div_2 = document.createElement("div");
-        var div_3 = document.createElement("div");
-        var div_4 = document.createElement("div");
-
-        div_2.setAttribute("class", "listSWrap");
-        div_3.setAttribute("class", "listS");
-        div_4.setAttribute("class", "more");
-        div_4.innerText = "자세히 보기";
-        $(".listLine").append(div_2).find(div_2).append(div_3).find(div_3).append(div_4);
-
-
-    }
-
-    $(document).ready(function () {
-        $(".listSWrap").css("width", `${$('.container').width() / 3}px`)
-    })
-    var photoList = document.querySelectorAll(".listS");
-
-    for (i = 0; i < photoList.length; i++) {
-        photoList[i].style.backgroundImage = 'url(img/sub_1/dog_' + (i + 1) + '.jpg)';
-    };
-
+//리사이즈
+window.onresize = function () {
+    document.location.reload();
 };
-
-
-
-$("#moreList").click(function () {
-    madeDiv();
-})
-
 
 var photoList = document.querySelectorAll(".listS");
 
@@ -47,13 +13,41 @@ for (i = 0; i < photoList.length; i++) {
     photoList[i].style.backgroundImage = 'url(img/sub_1/dog_' + (i + 1) + '.jpg)';
 };
 
+var videoArr = ["https://www.youtube.com/embed/dThIqeN7CTU","https://www.youtube.com/embed/Y5CV6ibP7Ao","https://www.youtube.com/embed/ItppeQZHsvU","https://www.youtube.com/embed/y9A5U4k8yAI"]
+var photoL = document.querySelectorAll(".img");
 
-var photoL = document.querySelectorAll(".img")
-for (i = 0; i < photoL.length; i++) {
-    photoL[i].style.backgroundImage = 'url(img/sub_1/dog_1_' + (i + 1) + '.jpg)';
-};
+$(document).ready(function () {
+    $(".more").click(function () {
+        var moreIdx = ($(this).parents(".listLine").index() / 2);
+        var listWrapIdx = $(this).parents(".listSWrap").index();
+        var current = $(".more").index(this);
+        console.log(current)
+        $(".detail").eq(moreIdx).slideToggle();
+        for (i = 0; i < photoL.length; i++) {
+            photoL[i].style.backgroundImage = 'url(img/sub_1/dog_'+(listWrapIdx+1)+'_' + (i + 1) + '.jpg)';
+        };
+        $("iframe").eq(moreIdx).attr("src",videoArr[current]);
+    });
+});
 
-$(".more").click(function () {
-    $(".detail").toggle()
-})
+var moreTxt = document.querySelector("#moreList");
+var lineIdx = document.querySelectorAll(".listLine")
+var listIdx = 1;
+
+$("#moreList").click(function () {
+    if ($("#board").height() > lineIdx.length * 420) {
+        $(".listLine").not(":first").slideUp();
+        listIdx = 1;
+        moreTxt.innerText = "더보기"
+    } else if ($("#board").height() >= ((lineIdx.length - 1) * 420)) {
+        $(".listLine").eq(listIdx).slideDown();
+        listIdx++;
+        moreTxt.innerText = "접기"
+    } else if ($("#board").height() < lineIdx.length * 420) {
+        $(".listLine").eq(listIdx).slideDown();
+        listIdx++;
+        moreTxt.innerText = "더보기"
+    }
+});
+
 
