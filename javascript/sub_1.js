@@ -13,7 +13,7 @@ for (i = 0; i < photoList.length; i++) {
     photoList[i].style.backgroundImage = 'url(img/sub_1/dog_' + (i + 1) + '.jpg)';
 };
 
-var videoArr = ["https://www.youtube.com/embed/dThIqeN7CTU","https://www.youtube.com/embed/Y5CV6ibP7Ao","https://www.youtube.com/embed/ItppeQZHsvU","https://www.youtube.com/embed/y9A5U4k8yAI"]
+var videoArr = ["https://www.youtube.com/embed/dThIqeN7CTU", "https://www.youtube.com/embed/Y5CV6ibP7Ao", "https://www.youtube.com/embed/ItppeQZHsvU", "https://www.youtube.com/embed/y9A5U4k8yAI"]
 var photoL = document.querySelectorAll(".img");
 
 $(document).ready(function () {
@@ -21,12 +21,16 @@ $(document).ready(function () {
         var moreIdx = ($(this).parents(".listLine").index() / 2);
         var listWrapIdx = $(this).parents(".listSWrap").index();
         var current = $(".more").index(this);
-        console.log(current)
-        $(".detail").eq(moreIdx).slideToggle();
+        $(".detail").eq(moreIdx).stop().slideToggle();
         for (i = 0; i < photoL.length; i++) {
-            photoL[i].style.backgroundImage = 'url(img/sub_1/dog_'+(listWrapIdx+1)+'_' + (i + 1) + '.jpg)';
+            photoL[i].style.backgroundImage = 'url(img/sub_1/dog_' + (listWrapIdx + 1) + '_' + (i + 1) + '.jpg)';
         };
-        $("iframe").eq(moreIdx).attr("src",videoArr[current]);
+        $("iframe").eq(moreIdx).attr("src", videoArr[current]);
+        if ($(".detail").is(':visible')) {
+            $(".more").eq(current).text('닫기');
+        } else {
+            $(".more").text('자세히 보기')
+        }
     });
 });
 
@@ -38,15 +42,15 @@ $("#moreList").click(function () {
     if ($("#board").height() > lineIdx.length * 420) {
         $(".listLine").not(":first").slideUp();
         listIdx = 1;
-        moreTxt.innerText = "더보기"
+        moreTxt.innerText = "더보기";
     } else if ($("#board").height() >= ((lineIdx.length - 1) * 420)) {
         $(".listLine").eq(listIdx).slideDown();
         listIdx++;
-        moreTxt.innerText = "접기"
+        moreTxt.innerText = "접기";
     } else if ($("#board").height() < lineIdx.length * 420) {
         $(".listLine").eq(listIdx).slideDown();
         listIdx++;
-        moreTxt.innerText = "더보기"
+        moreTxt.innerText = "더보기";
     }
 });
 
