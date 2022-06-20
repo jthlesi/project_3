@@ -79,7 +79,7 @@ body{
     border: 1px solid #1babb6;
 }
 
-.widgetBtn:hover{
+.choice{
     color: white;
     background: #1babb6;
 }
@@ -118,6 +118,15 @@ body{
     font-size: 1.5em;
     cursor: pointer;
 }
+
+.moreOpen:before{
+    content:"자세히 보기"
+}
+
+.moreClose:before{
+    content:"닫기"
+}
+
 
 .detail{
     display: none;
@@ -177,7 +186,7 @@ iframe{
     color: #1babb6;
 }
 
-#closeBtn{
+.closeBtn{
     width: 100%;
     height: 50px;
     background: #f9f9f9;    
@@ -199,6 +208,15 @@ iframe{
     font-size: 1.5em;
     cursor: pointer;
     border: 1px solid #1babb6;
+}
+
+
+.moreOpen_2:before{
+    content:"더보기"
+}
+
+.moreClose_2:before{
+    content:"접기"
 }
 
 .listLine{
