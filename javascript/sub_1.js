@@ -25,15 +25,17 @@ for (i = 0; i < photoList.length; i++) {
 };
 
 //표
-$(document).ready(function(){
+$(document).ready(function () {
     $("table tr:nth-child(1)>td:nth-child(2)").addClass("type");
+    $(".listL>p:nth-of-type(2)>span").addClass("type_2");
     $("table tr:nth-child(1)>td:nth-child(4)").addClass("age");
     $("table tr:nth-child(2)>td:nth-child(2)").addClass("sex");
     $("table tr:nth-child(2)>td:nth-child(4)").addClass("vac");
     $("table tr:nth-child(3)>td:nth-child(2)").addClass("serg");
     $("table tr:nth-child(3)>td:nth-child(4)").addClass("care");
-    });
-    
+    $(".listL>p:nth-of-type(1)>span").addClass("care_2");
+});
+
 
 //자세히보기
 $(document).on("click", ".more", function () {
@@ -41,26 +43,28 @@ $(document).on("click", ".more", function () {
     var current = $(".more").index(this);
 
     var videoArr = ["https://www.youtube.com/embed/dThIqeN7CTU", "https://www.youtube.com/embed/Y5CV6ibP7Ao", "https://www.youtube.com/embed/ItppeQZHsvU", "https://www.youtube.com/embed/y9A5U4k8yAI"]
-    var textArr_1 =["포메라니안","하이브리드견","말티푸","푸들"]
-    var textArr_2 =["4개월령","3개월령","7개월령","7개월령"]
-    var textArr_3 =["남아","여아","여아","남아"]
-    var textArr_4 =["미접종","완료","완료","완료"]
-    var textArr_5 =["미완료","미완료","완료","미완료"]
-    var textArr_6 =["케어불가","케어불가","케어불가","케어불가"]
+    var textArr_1 = ["포메라니안", "하이브리드견", "말티푸", "푸들"]
+    var textArr_2 = ["4개월령", "3개월령", "7개월령", "7개월령"]
+    var textArr_3 = ["남아", "여아", "여아", "남아"]
+    var textArr_4 = ["미접종", "완료", "완료", "완료"]
+    var textArr_5 = ["미완료", "미완료", "완료", "미완료"]
+    var textArr_6 = ["케어불가", "케어불가", "케어불가", "케어불가"]
     $("iframe").eq(moreIdx).attr("src", videoArr[current]);
     $(".type").eq(moreIdx).text(textArr_1[current]);
+    $(".type_2").eq(moreIdx).text(textArr_1[current]);
     $(".age").eq(moreIdx).text(textArr_2[current]);
     $(".sex").eq(moreIdx).text(textArr_3[current]);
     $(".vac").eq(moreIdx).text(textArr_4[current]);
     $(".serg").eq(moreIdx).text(textArr_5[current]);
     $(".care").eq(moreIdx).text(textArr_6[current]);
+    $(".care_2").eq(moreIdx).text(textArr_6[current]);
 
     $(".detail").eq(moreIdx).stop().slideDown();
 
     var photoListMore = document.querySelectorAll(".img");
 
     for (j = 0; j < photoListMore.length; j++) {
-        photoListMore[j].style.backgroundImage = 'url(img/sub_1/dog_' + (current+1) + '_' + (j + 1) + '.jpg)';
+        photoListMore[j].style.backgroundImage = 'url(img/sub_1/dog_' + (current + 1) + '_' + (j + 1) + '.jpg)';
     };
 
     if ($(".more").eq(current).hasClass("moreOpen")) {
@@ -87,40 +91,47 @@ var lineIdx = document.querySelectorAll(".listLine")
 var listIdx = 0;
 
 $("#moreList").click(function () {
-    if ($(".listLine").eq(listIdx).is(":visible")) {
+    if (listIdx < 4) {
         listIdx++
         $(".listLine").eq(listIdx).slideDown();
-        $(this).addClass("moreOpen_2").removeClass("moreClose_2")
-    } else if($(".listLine").eq(3).is(":visible")){
-        $(".listLine").not(":first").slideUp()
-        $(this).addClass("moreClose_2").removeClass("moreOpen_2")
-        listIdx=0;
-    }
-    // if ($(this).hasClass("moreOpen_2")) {
-    //     $(this).removeClass("moreClose_2").addClass("moreOpen_2")
-    //     $(this).addClass("moreClose_2").removeClass("moreOpen_2")
-    // } else {
-    //     $(this).addClass("moreOpen_2").removeClass("moreClose_2")
-    // } 
+    } else {
+        $(".listLine").not(":first").slideUp();
+        listIdx = 0;
     }
 
-    
+    setTimeout(function () {
+        if (listIdx < 4) {
+            $("#moreList").addClass("moreOpen_2").removeClass("moreClose_2");
+        } else {
+            $("#moreList").addClass("moreClose_2").removeClass("moreOpen_2");
+        }
+    }, 400);
+}
 );
 
-// $("#moreList").click(function () {
-//     if ($("#board").height() > lineIdx.length * 420) {
-//         $(".listLine").not(":first").slideUp();
-//         listIdx = 1;
-//         moreTxt.innerText = "더보기";
-//     } else if ($("#board").height() >= ((lineIdx.length - 1) * 420)) {
-//         $(".listLine").eq(listIdx).slideDown();
-//         listIdx++;
-//         moreTxt.innerText = "접기";
-//     } else if ($("#board").height() < lineIdx.length * 420) {
-//         $(".listLine").eq(listIdx).slideDown();
-//         listIdx++;
-//         moreTxt.innerText = "더보기";
-//     }
-// });
+//펼치기
+$("#center").click(function(){
+    $(this).stop().animate({marginTop:110},function(){
+    $("#left_1").stop().animate({marginTop:-110,marginLeft:-290},"slow")
+    $("#left_2").stop().animate({marginTop:-250,marginLeft:-105},"slow")
+    $("#left_3").stop().animate({marginTop:-250,marginLeft:105},"slow")
+    $("#left_4").stop().animate({marginTop:-110,marginLeft:290},"slow")
+})
+})
 
+var rollImg = document.querySelectorAll(".roll");
 
+    for (k = 0; k < rollImg.length -1; k++) {
+    rollImg[k].style.backgroundImage = 'url(img/sub_1/roll_'+(k+1)+'.jpg)';
+    };
+
+$('.roll').hover( function(){
+    var current = $(".roll").index(this);
+    $(".rollTxt").eq(current+1).stop().fadeIn().siblings().stop().hide()
+},function(){
+    $(".rollTxt").eq(0).stop().fadeIn().siblings().stop().hide()
+})
+
+$("#center").click(function () {
+    $(this).css("animation-play-state", "paused")
+})

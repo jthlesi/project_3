@@ -266,12 +266,6 @@
         width: 100%;
     }
 
-
-
-
-
-
-
     #footLeft{
         width: 50%;
     }
@@ -285,9 +279,5 @@
     #footRight{
         width:100%;
     }
-
-}
-
-@media (min-width:1141px){
 
 }

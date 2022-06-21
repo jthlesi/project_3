@@ -1,0 +1,95 @@
+@media (max-width:599px){
+    .container{
+        width : 100%;
+    }
+
+    table{
+        width:95%;
+    }
+
+    iframe{
+        width: 100%;
+        height: 400px;
+    }
+
+    .img{
+        width: 90%;
+    }
+
+    .listL{
+        font-size: 0.8em;
+        line-height: 2em;
+    }
+
+    #bannerTxt p{
+        font-size: 1em;
+    }
+
+    #benefitForm{
+        font-size: 1.5em;
+    }
+
+    #submitForm{
+        font-size: 1.5em;
+    }
+
+    .rollTxt:first-child{
+        font-size: 2.5em;
+    }
+
+    #center{
+        width: 350px;
+        height: 350px;
+    }
+
+    .roll{
+        width: 160px;
+        height: 160px;
+    }
+
+    .rollCover{
+        height: 50px;
+        top:110px;
+        font-size: 1em;
+    }
+}
+
+@media (min-width:600px) and (max-width:799px){
+    .container{
+        width : 100%;
+    }
+
+    table{
+        width:80%;
+    }
+
+    iframe{
+        width: 100%;
+        height: 400px;
+    }
+
+    .img{
+        width: 85%;
+    }
+    .roll{
+        width: 180px;
+        height: 180px;
+    }
+
+    .rollCover{
+        height: 50px;
+        top:130px;
+        font-size: 1em;
+    }
+
+    #center{
+        width: 380px;
+        height: 380px;
+    }
+}
+
+@media (min-width:800px) and (max-width:1140px){
+    .container{
+        width : 100%;
+    }
+}
