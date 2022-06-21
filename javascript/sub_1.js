@@ -91,7 +91,7 @@ $("#moreList").click(function () {
         listIdx++
         $(".listLine").eq(listIdx).slideDown();
         $(this).addClass("moreOpen_2").removeClass("moreClose_2")
-    } else if($(".listLine").eq(3)){
+    } else if($(".listLine").eq(3).is(":visible")){
         $(".listLine").not(":first").slideUp()
         $(this).addClass("moreClose_2").removeClass("moreOpen_2")
         listIdx=0;

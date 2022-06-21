@@ -380,7 +380,7 @@ h1,p,a,span,div {
 }
 
 .page:hover{
-    border: 2px solid #1babb6;
+    border: 3px solid #1babb6;
 }
 
 .page.on{
