@@ -60,7 +60,7 @@
     #form{
         margin-top: 70px;
         width: 100%;
-        height: 100px;
+        height: 90px;
     }
 
     #form p{
@@ -68,8 +68,9 @@
     }
 
     #form_btn{
-        width: 150px;
+        width: 130px;
         height: 40px;
+        font-size: 0.9em;
     }
 
     #wrap_photo{
@@ -124,7 +125,7 @@
 
     #footLeft p{
         line-height: 2em;
-        font-size: 1em;
+        font-size: 0.8em;
     }
 
     #footCenter{

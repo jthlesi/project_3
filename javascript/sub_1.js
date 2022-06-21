@@ -10,6 +10,7 @@ window.onresize = function () {
 
 //위젯
 $(document).ready(function () {
+    $(".widgetBtn:first").addClass("choice")
     $(".widgetBtn").hover(function () {
         $(this).addClass('choice').siblings().removeClass('choice')
     }, function () { $(".widgetBtn").eq(0).addClass('choice').siblings().removeClass('choice') })
