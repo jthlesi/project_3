@@ -79,10 +79,13 @@ body{
     border: 1px solid #1babb6;
 }
 
+
 .choice{
     color: white;
     background: #1babb6;
 }
+
+
 
 #board{
     margin-top: 80px;

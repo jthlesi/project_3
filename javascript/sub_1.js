@@ -97,8 +97,6 @@ $(document).on("click", ".more", function () {
     //스크롤이동
     if ($(".detail").eq(moreIdx).is(":visible")){
         $("html, body").animate({scrollTop:$(".listSWrap").eq(current).offset().top},"fast");
-    }else if($(".detail").eq(moreIdx).siblings(".detail").is(":visible")){
-        window.scrollBy(0,-$(".detail").height());
     }
 
     //자세히보기 이미지 변경
@@ -250,10 +248,10 @@ $("#center").click(function () {
 } else{
     $("#center").click(function () {
         $(this).stop().animate({ marginTop: 110 }, function () {
-            $("#left_1").stop().animate({ marginTop: -130,marginLeft: -150}, "slow");
-            $("#left_2").stop().animate({ marginTop: -160,marginLeft: -50}, "slow");
-            $("#left_3").stop().animate({ marginTop: -160,marginLeft: 50}, "slow");
-            $("#left_4").stop().animate({ marginTop: -130, marginLeft: 150}, "slow");
+            $("#left_1").stop().animate({ marginTop: -110,marginLeft: -150}, "slow");
+            $("#left_2").stop().animate({ marginTop: -150,marginLeft: -50}, "slow");
+            $("#left_3").stop().animate({ marginTop: -150,marginLeft: 50}, "slow");
+            $("#left_4").stop().animate({ marginTop: -110, marginLeft: 150}, "slow");
         })
     }); 
 }
