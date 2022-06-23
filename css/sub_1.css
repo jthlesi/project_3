@@ -262,7 +262,7 @@ iframe{
 
 #rollWrap{
     width: 100%;
-    height: 800px;
+    height: 700px;
     position: relative;
 }
 
@@ -291,7 +291,7 @@ iframe{
     height: 60px;
     position: absolute;
     top:140px;
-    background: #1e1c27;
+    background: #f9be3e;
     opacity: 0.8;
     color: white;
     text-align: center;
@@ -307,7 +307,7 @@ iframe{
     width: 400px;
     height: 400px;
     display: block;
-    background: #1e1c27;
+    background: #f9be3e;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -336,7 +336,7 @@ iframe{
     background-image: url(../img/sub_1/back.jpg);
     background-attachment: fixed;
     font-size: 2em;
-    margin-bottom: 100px;
+    margin-bottom: 80px;
     text-shadow: black 1px 1px 1px;
     display: flex;
     justify-content: center;
