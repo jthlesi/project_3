@@ -10,11 +10,11 @@ window.onresize = function () {
 
 //위젯
 $(document).ready(function () {
-    $(".widgetBtn:first").addClass("choice");
+    $(".widgetBtn:eq(1)").addClass("choice");
     $(".widgetBtn").hover(function () {
         $(this).addClass('choice').siblings().removeClass('choice');
     }, function () {
-        $(".widgetBtn").eq(0).addClass('choice').siblings().removeClass('choice');
+        $(".widgetBtn").eq(1).addClass('choice').siblings().removeClass('choice');
     })
 }
 );
@@ -38,7 +38,7 @@ if (window.matchMedia("(min-width:800px)").matches) {
 var photoList = document.querySelectorAll(".listS");
 
 for (i = 0; i < photoList.length; i++) {
-    photoList[i].style.backgroundImage = 'url(img/sub_1/dog_' + (i + 1) + '.jpg)';
+    photoList[i].style.backgroundImage = 'url(img/sub_2/cat_' + (i + 1) + '.jpg)';
 };
 
 //표
@@ -57,13 +57,13 @@ $(document).ready(function () {
 $(document).on("click", ".more", function () {
     var moreIdx = ($(this).parents(".listLine").index() / 2);
     var current = $(".more").index(this);
-    var videoArr = ["https://www.youtube.com/embed/dThIqeN7CTU", "https://www.youtube.com/embed/Y5CV6ibP7Ao", "https://www.youtube.com/embed/ItppeQZHsvU", "https://www.youtube.com/embed/y9A5U4k8yAI"];
-    var textArr_1 = ["포메라니안", "하이브리드견", "말티푸", "푸들"];
-    var textArr_2 = ["4개월령", "3개월령", "7개월령", "7개월령"];
-    var textArr_3 = ["남아", "여아", "여아", "남아"];
-    var textArr_4 = ["미접종", "완료", "완료", "완료"];
-    var textArr_5 = ["미완료", "미완료", "완료", "미완료"];
-    var textArr_6 = ["케어불가", "케어불가", "케어불가", "케어불가"];
+    var videoArr = ["https://www.youtube.com/embed/7O76tqFWQ3w", "https://www.youtube.com/embed//zpZETSCANKY", "https://www.youtube.com/embed//Fg-bQbkywxk", "https://www.youtube.com/embed//ur7EWAn5CmE"];
+    var textArr_1 = ["뱅갈", "스코티쉬폴드", "아비시니안", "네바마스커레이드"];
+    var textArr_2 = ["8살령", "5살령", "2살령", "4살령"];
+    var textArr_3 = ["여아", "여아", "남아", "남아"];
+    var textArr_4 = ["완료", "완료", "완료", "완료"];
+    var textArr_5 = ["미완료", "미완료", "미완료", "미완료"];
+    var textArr_6 = ["보호자분의 건강문제", "보호자분의 건강문제", "보호자분의 건강문제", "보호자분의 건강문제"];
     //자세히보기 텍스트 변경
     if (window.matchMedia("(min-width:600px)").matches) {
         $("iframe").eq(moreIdx).attr("src", videoArr[current]);
@@ -89,36 +89,34 @@ $(document).on("click", ".more", function () {
     //자세히보기
     if (window.matchMedia("(min-width:600px)").matches) {
         $(".detail").eq(moreIdx).stop().slideDown();
-        
     } else {
         $(".detail").eq(current).stop().slideDown();
-        
     }
-    //스크롤이동
+
     if ($(".detail").eq(moreIdx).is(":visible")){
         $("html, body").animate({scrollTop:$(".listSWrap").eq(current).offset().top},"fast");
     }else if($(".detail").eq(moreIdx).siblings(".detail").is(":visible")){
         window.scrollBy(0,-$(".detail").height());
     }
-
+    
     //자세히보기 이미지 변경
     var photoListMore = document.querySelectorAll(".img");
 
     for (j = 0; j < 4; j++) {
-        photoListMore[j].style.backgroundImage = 'url(img/sub_1/dog_' + (current + 1) + '_' + (j + 1) + '.jpg)';
+        photoListMore[j].style.backgroundImage = 'url(img/sub_2/cat_' + (current + 1) + '_' + (j + 1) + '.jpg)';
     };
     for (j = 4; j < 8; j++) {
-        photoListMore[j].style.backgroundImage = 'url(img/sub_1/dog_' + (current+1) + '_' + (j  -3) + '.jpg)';
+        photoListMore[j].style.backgroundImage = 'url(img/sub_2/cat_' + (current+1) + '_' + (j  -3) + '.jpg)';
     };
     for (j = 8; j < 12; j++) {
-        photoListMore[j].style.backgroundImage = 'url(img/sub_1/dog_' + (current+1) + '_' + (j  -7) + '.jpg)';
+        photoListMore[j].style.backgroundImage = 'url(img/sub_2/cat_' + (current+1) + '_' + (j  -7) + '.jpg)';
     };
     for (j = 12; j < 16; j++) {
-        photoListMore[j].style.backgroundImage = 'url(img/sub_1/dog_' + (current+1) + '_' + (j  -11) + '.jpg)';
+        photoListMore[j].style.backgroundImage = 'url(img/sub_2/cat_' + (current+1) + '_' + (j  -11) + '.jpg)';
     };
 
 
-    //자세히보기 접기, 버튼 텍스트변경
+    //자세히보기 버튼 텍스트변경
     if (window.matchMedia("(min-width:600px)").matches) {
         if ($(".more").eq(current).hasClass("moreOpen")) {
             $(".detail").not(":eq(" + moreIdx + ")").stop().slideUp();
@@ -163,7 +161,7 @@ if (window.matchMedia("(min-width:600px) and (max-width:799px)").matches) {
         var div = document.createElement("div");
         div.setAttribute("class", "listLine");
         $("#board").append(div);
-        $(`.listLine:eq(${i + 5})`).insertBefore("#moreList")
+        $(`.listLine:eq(${i + 4})`).insertBefore("#moreList")
         $(".detail:eq(0)").clone().insertBefore("#moreList")
     };
     //리스트 재배치
@@ -177,15 +175,10 @@ if (window.matchMedia("(min-width:600px) and (max-width:799px)").matches) {
     $(".listLine:eq(3) > .listSWrap:eq(4)").prependTo(".listLine:eq(4)");
     $(".listLine:eq(3) > .listSWrap:eq(3)").prependTo(".listLine:eq(4)");
     $(".listLine:eq(3) > .listSWrap:eq(2)").prependTo(".listLine:eq(4)");
-    $(".listLine:eq(4) > .listSWrap:eq(6)").prependTo(".listLine:eq(5)");
-    $(".listLine:eq(4) > .listSWrap:eq(5)").prependTo(".listLine:eq(5)");
     $(".listLine:eq(4) > .listSWrap:eq(4)").prependTo(".listLine:eq(5)");
     $(".listLine:eq(4) > .listSWrap:eq(3)").prependTo(".listLine:eq(5)");
     $(".listLine:eq(4) > .listSWrap:eq(2)").prependTo(".listLine:eq(5)");
-    $(".listLine:eq(5) > .listSWrap:eq(4)").prependTo(".listLine:eq(6)");
-    $(".listLine:eq(5) > .listSWrap:eq(3)").prependTo(".listLine:eq(6)");
     $(".listLine:eq(5) > .listSWrap:eq(2)").prependTo(".listLine:eq(6)");
-    $(".listLine:eq(6) > .listSWrap:eq(2)").prependTo(".listLine:eq(7)");
 } else if (window.matchMedia("(max-width:599px)").matches) {
     //자세히보기 재배치
     $(".detail:eq(0)").clone().insertAfter(".listSWrap");
@@ -199,7 +192,7 @@ var listIdx = 0;
 
 if (window.matchMedia("(min-width:600px) and (max-width:799px)").matches) {
     $("#moreList").click(function () {
-        if (listIdx < 7) {
+        if (listIdx < 6) {
             listIdx++;
             $(".listLine").eq(listIdx).slideDown();
         } else {
@@ -208,7 +201,7 @@ if (window.matchMedia("(min-width:600px) and (max-width:799px)").matches) {
         }
         //버튼 텍스트 변경
         setTimeout(function () {
-            if (listIdx < 7) {
+            if (listIdx < 6) {
                 $("#moreList").addClass("moreOpen_2").removeClass("moreClose_2");
             } else {
                 $("#moreList").addClass("moreClose_2").removeClass("moreOpen_2");
@@ -250,10 +243,10 @@ $("#center").click(function () {
 } else{
     $("#center").click(function () {
         $(this).stop().animate({ marginTop: 110 }, function () {
-            $("#left_1").stop().animate({ marginTop: -130,marginLeft: -150}, "slow");
-            $("#left_2").stop().animate({ marginTop: -160,marginLeft: -50}, "slow");
-            $("#left_3").stop().animate({ marginTop: -160,marginLeft: 50}, "slow");
-            $("#left_4").stop().animate({ marginTop: -130, marginLeft: 150}, "slow");
+            $("#left_1").stop().animate({ marginTop: -130,marginLeft: -170}, "slow");
+            $("#left_2").stop().animate({ marginTop: -160,marginLeft: -55}, "slow");
+            $("#left_3").stop().animate({ marginTop: -160,marginLeft: 55}, "slow");
+            $("#left_4").stop().animate({ marginTop: -130, marginLeft: 170}, "slow");
         })
     }); 
 }

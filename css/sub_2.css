@@ -21,7 +21,7 @@ body{
     background: darkgray;
     top:-80px;
     position: relative;
-    background-image: url(../img/sub_1/banner_sub_1.jpg);
+    background-image: url(../img/sub_2/banner_sub_2.jpg.webp);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -291,7 +291,7 @@ iframe{
     height: 60px;
     position: absolute;
     top:140px;
-    background: #1e1c27;
+    background: #f9be3e;
     opacity: 0.8;
     color: white;
     text-align: center;
@@ -312,7 +312,6 @@ iframe{
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-weight: 700;
     animation: pulse 1.5s infinite cubic-bezier(0.5, 0.5, 0.7, 0.7);
 }
 
