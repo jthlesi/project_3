@@ -203,8 +203,8 @@ if (window.matchMedia("(min-width:800px)").matches) {
 if (window.matchMedia("(min-width:800px)").matches) {
     $(document).on("scroll", function () {
         if ($(window).scrollTop() > $("#form").position().top) {
-            $("#text>h1").animate({ right: "0px" }, "slow", function () {
-                $("#text>h2").delay(200).animate({ left: "0px" }, "slow", function () {
+            $("#text>h2").animate({ right: "0px" }, "slow", function () {
+                $("#text>h3").delay(200).animate({ left: "0px" }, "slow", function () {
                     $("#text>p").delay(100).animate({ bottom: "0px" }, "slow")
                 })
             })
@@ -213,8 +213,8 @@ if (window.matchMedia("(min-width:800px)").matches) {
 } else {
     $(document).on("scroll", function () {
         if ($(window).scrollTop() > ($("#text").position().top - 350)) {
-            $("#text>h1").animate({ right: "0px" }, "slow", function () {
-                $("#text>h2").delay(200).animate({ left: "0px" }, "slow", function () {
+            $("#text>h2").animate({ right: "0px" }, "slow", function () {
+                $("#text>h3").delay(200).animate({ left: "0px" }, "slow", function () {
                     $("#text>p").delay(100).animate({ bottom: "0px" }, "slow")
                 })
             })
