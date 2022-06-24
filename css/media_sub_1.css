@@ -56,9 +56,10 @@
     }
 
     .rollCover{
-        height: 60px;
+        height: 40px;
         top:60px;
         font-size: 0.6em;
+        padding-top: 1px;
     }
 }
 
