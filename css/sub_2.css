@@ -187,7 +187,7 @@ iframe{
     color: #1babb6;
 }
 
-.listL p:nth-last-of-type(1),p:nth-last-of-type(2),p:nth-last-of-type(3){
+.listL>p:nth-last-of-type(1), .listL>p:nth-last-of-type(2), .listL>p:nth-last-of-type(3){
     color: #1babb6;
 }
 .closeBtn{
