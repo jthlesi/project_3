@@ -115,7 +115,6 @@ $(document).on("click", ".more", function () {
         photoListMore[j].style.backgroundImage = 'url(img/sub_1/dog_' + (current+1) + '_' + (j  -11) + '.jpg)';
     };
 
-
     //자세히보기 접기, 버튼 텍스트변경
     if (window.matchMedia("(min-width:600px)").matches) {
         if ($(".more").eq(current).hasClass("moreOpen")) {
@@ -248,10 +247,10 @@ $("#center").click(function () {
 } else{
     $("#center").click(function () {
         $(this).stop().animate({ marginTop: 110 }, function () {
-            $("#left_1").stop().animate({ marginTop: -110,marginLeft: -150}, "slow");
-            $("#left_2").stop().animate({ marginTop: -150,marginLeft: -50}, "slow");
-            $("#left_3").stop().animate({ marginTop: -150,marginLeft: 50}, "slow");
-            $("#left_4").stop().animate({ marginTop: -110, marginLeft: 150}, "slow");
+            $("#left_1").stop().animate({ marginTop: -110,marginLeft: -145}, "slow");
+            $("#left_2").stop().animate({ marginTop: -150,marginLeft: -45}, "slow");
+            $("#left_3").stop().animate({ marginTop: -150,marginLeft: 45}, "slow");
+            $("#left_4").stop().animate({ marginTop: -110, marginLeft: 145}, "slow");
         })
     }); 
 }

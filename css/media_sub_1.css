@@ -47,8 +47,8 @@
     }
 
     .roll{
-        width: 22%;
-        height: 100px;
+        width: 21%;
+        height: 90px;
         top:40%
     }
     .roll:not(:last-of-type){
