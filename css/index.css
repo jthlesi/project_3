@@ -1,3 +1,17 @@
+/* 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+@font-face {
+    font-family: 'S-CoreDream-4Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1,h2,h3,p,a,span,div {
+    font-family: "Raleway", "S-CoreDream-4Regular", sans-serif;
+}
+
 /* 전체적용 */
 .container{
     width:1140px;
@@ -9,22 +23,6 @@
 body{
     overscroll-behavior-y: contain;
 }
-
-/* 폰트 */
-@font-face {
-    font-family: 'S-CoreDream-4Regular';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
-
-h1,p,a,span,div {
-    font-family: "Raleway", "S-CoreDream-4Regular", sans-serif;
-}
-
-
 
 /* 배너 */
 #banner{
@@ -48,7 +46,7 @@ h1,p,a,span,div {
     color:white;
 }
 
-#banner h1{
+#banner h2{
     font-size: 4em;
 }
 
@@ -110,7 +108,7 @@ h1,p,a,span,div {
     height: 250px;
     float: left;
     position: relative;
-    background-repeat: none;
+    background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
@@ -185,7 +183,7 @@ h1,p,a,span,div {
 #photo{
     position: relative;
     background-image: url(../img/photo.jpg);
-    background-repeat: none;
+    background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     left:0;
@@ -203,13 +201,13 @@ h1,p,a,span,div {
     overflow: hidden;
 }
 
-#text h1{
+#text h2{
     color: #1babb6;
     font-size: 3.5em;
     position: relative;
     right:-600px;
 }
-#text h2{
+#text h3{
     margin: 20px 0 30px 0;
     font-size: 2em;
     position: relative;
@@ -272,7 +270,7 @@ h1,p,a,span,div {
     height: 500px;
     margin-top: 200px;
     background-image: url(../img/backcover.jpg); 
-    background-repeat: none;
+    background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -292,7 +290,7 @@ h1,p,a,span,div {
     color: white;
 }
 
-#countTxt h1{
+#countTxt h2{
     margin-bottom: 20px;
     font-size: 3.3em;
 }
@@ -329,7 +327,7 @@ h1,p,a,span,div {
     justify-content: center;
 }
 
-#review h1{
+#review h2{
     font-size: 3em;
 }
 
@@ -397,7 +395,7 @@ h1,p,a,span,div {
 .reviewImg{
     width: 100%;
     height: 350px;
-    background-repeat: none;
+    background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
