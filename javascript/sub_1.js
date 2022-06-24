@@ -247,10 +247,10 @@ $("#center").click(function () {
 } else{
     $("#center").click(function () {
         $(this).stop().animate({ marginTop: 110 }, function () {
-            $("#left_1").stop().animate({ marginTop: -110,marginLeft: -145}, "slow");
+            $("#left_1").stop().animate({ marginTop: -110,marginLeft: -130}, "slow");
             $("#left_2").stop().animate({ marginTop: -150,marginLeft: -45}, "slow");
             $("#left_3").stop().animate({ marginTop: -150,marginLeft: 45}, "slow");
-            $("#left_4").stop().animate({ marginTop: -110, marginLeft: 145}, "slow");
+            $("#left_4").stop().animate({ marginTop: -110, marginLeft: 130}, "slow");
         })
     }); 
 }
