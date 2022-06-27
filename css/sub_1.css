@@ -79,13 +79,10 @@ body{
     border: 1px solid #1babb6;
 }
 
-
 .choice{
     color: white;
     background: #1babb6;
 }
-
-
 
 #board{
     margin-top: 80px;
@@ -93,7 +90,6 @@ body{
     height: auto;
     overflow: hidden;
 }
-
 
 .listSWrap{
     float:left;
@@ -130,7 +126,6 @@ body{
     content:"닫기"
 }
 
-
 .detail{
     display: none;
     width: 100%;
@@ -139,10 +134,6 @@ body{
 
 .listL{
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     text-align: center;
 }
 
@@ -158,6 +149,7 @@ table, tr, td{
     border: 1px solid #1babb6;
     border-collapse: collapse;
     padding: 5px;
+    margin: 10px auto;
 }
 
 td{
@@ -183,7 +175,7 @@ iframe{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    margin: 40px 0;
+    margin: 40px auto;
 }
 
 .listL span{

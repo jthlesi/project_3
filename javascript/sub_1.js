@@ -4,10 +4,6 @@ $(document).ready(function () {
 });
 
 //리사이즈
-window.onresize = function () {
-    document.location.reload();
-};
-
 function detectMediaSize() { 
     if ( window.matchMedia('(min-width: 0px) and (max-width: 599px)').matches ) {
     } else if ( window.matchMedia('(min-width: 600px) and (max-width: 799px)').matches ) {
@@ -18,7 +14,6 @@ function detectMediaSize() {
 window.addEventListener('resize', detectMediaSize, false);
 
 detectMediaSize();   
-
 
 //위젯
 $(document).ready(function () {
@@ -108,7 +103,7 @@ $(document).on("click", ".more", function () {
     }
     //스크롤이동
     if ($(".detail").eq(moreIdx).is(":visible")){
-        $("html, body").animate({scrollTop:$(".listSWrap").eq(current).offset().top},"fast");
+        $("html, body").stop().animate({scrollTop:$(".listSWrap").eq(current).offset().top},"fast");
     }
 
     //자세히보기 이미지 변경

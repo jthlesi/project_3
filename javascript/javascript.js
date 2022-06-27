@@ -4,10 +4,6 @@ $(document).ready(function () {
 });
 
 //리사이즈
-window.onresize = function () {
-    document.location.reload();
-};
-
 function detectMediaSize() { 
     if ( window.matchMedia('(min-width: 0px) and (max-width: 599px)').matches ) {
     } else if ( window.matchMedia('(min-width: 600px) and (max-width: 799px)').matches ) {
@@ -56,7 +52,6 @@ $(".menu_1s").click(function () {
         $("i", this).removeClass("fa-plus").addClass("fa-minus");
     } else {
         $("i", this).removeClass("fa-minus").addClass("fa-plus");
-
     }
 })
 
@@ -79,7 +74,6 @@ var indexNum = 0
 for (i = 0; i < slideBox.length; i++) {
     slideBox[i].style.backgroundImage = 'url(img/small_' + (i + 1) + '.jpg)';
 };
-
 
 if (window.matchMedia("(min-width:800px)").matches) {
 
