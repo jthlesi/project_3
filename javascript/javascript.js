@@ -183,6 +183,10 @@ if (window.matchMedia("(min-width:800px)").matches) {
 
 setInterval(smallSlide, 3000)
 
+window.onresize = function () {
+    document.location.reload();
+};
+
 //section#3 크기
 if (window.matchMedia("(min-width:800px)").matches) {
 
